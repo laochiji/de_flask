@@ -1,21 +1,27 @@
 pipeline {
-  agent any
-  stages {
-    stage('chuqu') {
-      steps {
-        sh 'echo "wotaonihouzi"'
+    agent any
+    stages {
+        stage('Test') {
+            steps {
+                echo "building -----------"
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "testing -----------"
+                sh 'pwd'
+            }
+        }
+    }
+    post {
+        always {
+          echo "finished -----------"
+        }
+      success {
+          echo "success"
+      }
+      failure {
+          echo "failure"
       }
     }
-    stage('chakanmolu') {
-      steps {
-        sh '''pwd
-ls'''
-      }
-    }
-    stage('end') {
-      steps {
-        echo '123'
-      }
-    }
-  }
 }
