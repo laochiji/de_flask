@@ -1,15 +1,15 @@
 pipeline {
     agent any
     stages {
-        stage('Test') {
+        stage("Test") {
             steps {
                 echo "building -----------"
             }
         }
-        stage('Test') {
+        stage("Test") {
             steps {
                 echo "testing -----------"
-                sh 'pwd'
+                sh "pwd"
             }
         }
     }
